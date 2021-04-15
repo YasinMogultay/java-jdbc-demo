@@ -19,7 +19,7 @@ public class JDBCDemo {
                 System.out.println("name: " + rs.getString(3));
 
                 //Insert Example
-                String insertQuery = "Insert INTO albums (artist, name, release_date, genre, sales) VALUES('Thrillerr','Jackson Michael', 2020, 'rock', 20)";
+                String insertQuery = "Insert INTO albums (artist, name, release_date, genre, sales) VALUES('Micheal Jackson','Jackson Michaell', 2020, 'rock', 20)";
                 statement.executeUpdate(insertQuery, Statement.RETURN_GENERATED_KEYS);
                 rs = statement.getGeneratedKeys();
                 if (rs.next()) {
