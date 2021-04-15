@@ -14,9 +14,18 @@ public class JDBCDemo {
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery("SELECT  * FROM albums");
             while (rs.next()) {
-//                System.out.println("id: " + rs.getLong(1));
+                System.out.println("id: " + rs.getLong(1));
                 System.out.println("artist: " + rs.getString("artist"));
                 System.out.println("name: " + rs.getString(3));
+
+                //Insert Example
+                String insertQuery = "Insert INTO albums (artist, name, release_date, genre, sales) VALUES('Thrillerr','Jackson Michael', 2020, 'rock', 20)";
+                statement.executeUpdate(insertQuery, Statement.RETURN_GENERATED_KEYS);
+                rs = statement.getGeneratedKeys();
+                if (rs.next()) {
+                    System.out.println("Inserted a new record" + rs.getLong(1));
+                }
+
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
