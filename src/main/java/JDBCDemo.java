@@ -10,7 +10,7 @@ public class JDBCDemo {
                     "jdbc:mysql://localhost/codeup_test_db?serverTimezone=UTC&useSSL=false",
                     "root",
                     "codeup"
-                    );
+            );
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery("SELECT  * FROM albums");
             while (rs.next()) {
