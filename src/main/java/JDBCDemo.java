@@ -29,6 +29,7 @@ public class JDBCDemo {
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+
         }
 
     }
